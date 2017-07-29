@@ -1,0 +1,6 @@
+#listOfTasks {
+    margin: 10px;
+}
+#listOfTasks ul {
+    list-style: none;
+}
