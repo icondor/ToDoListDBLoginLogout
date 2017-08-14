@@ -35,10 +35,19 @@
       <scope>test</scope>
     </dependency>
 
+
+    <!-- remote postgres server?  use this one -->
+    <!--<dependency>-->
+      <!--<groupId>org.postgresql</groupId>-->
+      <!--<artifactId>postgresql</artifactId>-->
+      <!--<version>9.2-1003-jdbc4</version>-->
+    <!--</dependency>-->
+
+    <!-- local postgres server?  use this one -->
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
-      <version>9.2-1003-jdbc4</version>
+      <version>42.1.4</version>
     </dependency>
 
     <dependency>
