@@ -8,9 +8,13 @@ import java.sql.*;
 public class UserDBAccess {
 
 
-    final static String URL = "jdbc:postgresql://54.93.65.5:5432/5IonelD";
-    final static String USERNAME = "fasttrackit_dev";
-    final static String PASSWORD = "fasttrackit_dev";
+ //   final static String URL = "jdbc:postgresql://54.93.65.5:5432/5IonelD";
+
+
+
+ final static String URL = "jdbc:postgresql://localhost:5432/mydb";
+    final static String USERNAME = "userdb";
+    final static String PASSWORD = "password1";
 
     public int isUserPwdOK(String user, String pwd) {
 
