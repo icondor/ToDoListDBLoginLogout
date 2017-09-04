@@ -30,15 +30,16 @@ public class ToDoListDBAccess {
 
             Class.forName("org.postgresql.Driver");
 
-            // 3. obtain a connection
             Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
-            // 4. create a query statement
-            Statement st = conn.createStatement();
 
-            String query = "SELECT * FROM tasklistionel where isdone=false and fkiduser="+userid+" order by taskname asc";
+            String query = "SELECT * FROM tasklistionel where isdone=false and fkiduser=? order by taskname asc";
+
+            PreparedStatement preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setInt(1,userid);
+
             // 5. execute a query
-            ResultSet rs = st.executeQuery(query);
+            ResultSet rs = preparedStatement.executeQuery();
 
             // 6. iterate the result set and print the values
             while (rs.next()) {
@@ -58,7 +59,7 @@ public class ToDoListDBAccess {
 
             System.out.println("getting tasks from db, closing everything");
             rs.close();
-            st.close();
+            preparedStatement.close();
             conn.close();
 
 
